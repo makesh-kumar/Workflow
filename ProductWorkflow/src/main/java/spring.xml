@@ -8,7 +8,7 @@
 
 
 	<bean id='standardWorkflow'
-		class='com.demo.CustomWorkflow.StandardWorkflow'>
+		class='com.demo.StandardWorkflow'>
 		<property name='workflowActions'>
 			<map>
 				<entry key='action1_action'>
@@ -22,37 +22,30 @@
 
 	<bean id='action1_action' class='java.util.ArrayList'>
 		<constructor-arg>
-			<list value-type='com.javatpoint.WorkflowAction'>
-				<ref bean='calculateMarks' />
-				<ref bean='checkForExtraCurricular' />
-				<ref bean='publishFinalScore' />
+			<list>
+				<ref bean='actionOne' />
+				<ref bean='actionTwo' />
+				<ref bean='actionThree'/>
+				<ref bean='actionFour'/>
+				<ref bean='actionFive'/>
 			</list>
 		</constructor-arg>
 	</bean>
 
 
 
-	<bean id="calculateMarks" class="com.demo.CustomWorkflow.actions.CalculateMarks"></bean>
-	<bean id="checkForExtraCurricular" class="com.demo.CustomWorkflow.actions.CheckForExtraCurricular"></bean>
-	<bean id="publishFinalScore" class="com.demo.CustomWorkflow.actions.PublishFinalScore"></bean>
+<bean id="actionOne" class="com.demo.actions.ActionOne"> </bean>
+<bean id="actionTwo" class="com.demo.actions.ActionTwo"> </bean>
+<bean id="actionThree" class="com.demo.actions.ActionThree"> </bean>
+<bean id="actionFour" class="com.demo.actions.ActionFour"> </bean>
+<bean id="actionFive" class="com.demo.actions.ActionFive"> </bean>
 
 
-
-
-	<bean id="student" class="com.demo.CustomWorkflow.Student">
-		<property name="id" value="100"></property>
-		<property name="name" value="Makesh"></property>
-		<property name="marks">
-			<map>
-				<entry key="English">
-					<value>200</value>
-				</entry>
-
-				<entry key="Maths">
-					<value>300</value>
-				</entry>
-			</map>
-		</property>
+	<bean id="product" class="com.demo.model.Product">
+		<property name="product_id" value="100"></property>
+		<property name="product_name" value="Mobile"></property>
+		<property name="product_colour" value="Blue"></property>
+		
 	</bean>
 </beans>  
 
